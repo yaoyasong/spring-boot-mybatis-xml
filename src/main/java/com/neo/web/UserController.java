@@ -43,5 +43,11 @@ public class UserController {
     	userMapper.delete(id);
     }
     
+    @RequestMapping("/getUserByName")
+    public User getUserByName(@RequestParam("userName") String userName) {
+    	User user = userMapper.getUserByName(userName);
+    	return user;
+    }
+    
     
 }
