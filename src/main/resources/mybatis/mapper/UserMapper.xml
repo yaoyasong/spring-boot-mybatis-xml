@@ -57,6 +57,7 @@
        <include refid="Base_Column_List" />
     	   FROM users
     	   WHERE userName = #{userName}
+    	   LIMIT 1
     </select>
 
 </mapper>
