@@ -3,6 +3,8 @@ package com.neo.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +43,15 @@ public class UserController {
     @RequestMapping(value="/delete/{id}")
     public void delete(@PathVariable("id") Long id) {
     	userMapper.delete(id);
+    }
+    
+    @RequestMapping("/getUserByName")
+    public ResponseEntity<User> getUserByName(@RequestParam("userName") String userName) {
+    	User user = userMapper.getUserByName(userName);
+    	if (user == null) {
+    		return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+    	}
+    	return new ResponseEntity<>(user, HttpStatus.OK);
     }
     
     
