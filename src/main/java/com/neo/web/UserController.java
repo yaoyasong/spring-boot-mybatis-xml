@@ -31,14 +31,16 @@ public class UserController {
     }
     
     @RequestMapping("/add")
-    public void save(User user, Role role) {
+    public void save(User user, Role role, HttpServletRequest request) {
     	user.setRole(role);
+    	user.setAddress(request.getAddress());
     	userMapper.insert(user);
     }
     
     @RequestMapping(value="update")
-    public void update(User user, Role role) {
+    public void update(User user, Role role, HttpServletRequest request) {
     	user.setRole(role);
+    	user.setAddress(request.getAddress());
     	userMapper.update(user);
     }
     
