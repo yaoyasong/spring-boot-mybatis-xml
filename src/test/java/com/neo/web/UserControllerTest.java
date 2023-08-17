@@ -34,4 +34,10 @@ public class UserControllerTest {
                 .accept(MediaType.APPLICATION_JSON_UTF8)).andDo(print());
     }
 
+    @Test
+    public void getUsersPaginated() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/getUsersPaginated?startIndex=0&pageSize=10")
+                .accept(MediaType.APPLICATION_JSON_UTF8)).andExpect(status().isOk()).andDo(print());
+    }
+
 }

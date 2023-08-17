@@ -55,6 +55,11 @@ public class UserController {
     	}
     	return new ResponseEntity<>(user, HttpStatus.OK);
     }
+
+    @RequestMapping("/getUsersPaginated")
+    public List<User> getUsersPaginated(@RequestParam("startIndex") int startIndex, @RequestParam("pageSize") int pageSize) {
+        return userMapper.getUsersPaginated(startIndex, pageSize);
+    }
     
-    
+}
 }

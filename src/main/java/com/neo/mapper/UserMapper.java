@@ -17,5 +17,7 @@ public interface UserMapper {
 	void delete(Long id);
 
 	User getUserByName(String userName);
+	
+	List<User> getUsersPaginated(int startIndex, int pageSize);
 }
 }

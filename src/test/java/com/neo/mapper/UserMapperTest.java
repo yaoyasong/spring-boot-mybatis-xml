@@ -50,4 +50,10 @@ public class UserMapperTest {
 		Assert.assertTrue(("neo".equals(userMapper.getOne(id).getNickName())));
 	}
 
+	@Test
+	public void testGetUsersPaginated() throws Exception {
+	    List<User> users = userMapper.getUsersPaginated(0, 10);
+	    Assert.assertEquals(10, users.size());
+	}
+
 }
