@@ -3,6 +3,7 @@ package com.neo.model;
 import java.io.Serializable;
 
 import com.neo.enums.UserSexEnum;
+import com.neo.model.Role;
 
 public class User implements Serializable {
 
@@ -11,7 +12,8 @@ public class User implements Serializable {
 	private String userName;
 	private String passWord;
 	private UserSexEnum userSex;
-	private String nickName;
+ 	private String nickName;
+ 	private Role role;
 
 	public User() {
 		super();
@@ -64,10 +66,18 @@ public class User implements Serializable {
 		this.nickName = nickName;
 	}
 
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "userName " + this.userName + ", pasword " + this.passWord + "sex " + userSex.name();
+  		return "userName " + this.userName + ", pasword " + this.passWord + "sex " + userSex.name() + ", role " + role;
 	}
 
 }
