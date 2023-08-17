@@ -60,4 +60,8 @@
     	   LIMIT 1
     </select>
 
+    <select id="getUsersPaginated" resultType="com.neo.model.User">
+        SELECT * FROM users LIMIT #{startIndex}, #{pageSize}
+    </select>
+
 </mapper>
