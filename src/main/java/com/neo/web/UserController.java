@@ -31,12 +31,14 @@ public class UserController {
     }
     
     @RequestMapping("/add")
-    public void save(User user) {
+    public void save(User user, Role role) {
+    	user.setRole(role);
     	userMapper.insert(user);
     }
     
     @RequestMapping(value="update")
-    public void update(User user) {
+    public void update(User user, Role role) {
+    	user.setRole(role);
     	userMapper.update(user);
     }
     
