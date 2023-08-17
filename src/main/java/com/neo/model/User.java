@@ -13,7 +13,8 @@ public class User implements Serializable {
 	private String passWord;
 	private UserSexEnum userSex;
  	private String nickName;
- 	private Role role;
+	private String address;
+	private Role role;
 
 	public User() {
 		super();
@@ -70,9 +71,17 @@ public class User implements Serializable {
  		this.role = role;
  	}
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
+ 	public void setNickName(String nickName) {
+ 		this.nickName = nickName;
+ 	}
+ 
+ 	public String getAddress() {
+ 		return address;
+ 	}
+ 
+ 	public void setAddress(String address) {
+ 		this.address = address;
+ 	}
 
 	@Override
 	public String toString() {
